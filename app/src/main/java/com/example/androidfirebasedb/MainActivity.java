@@ -3,6 +3,7 @@ package com.example.androidfirebasedb;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         edt_title = (EditText)findViewById(R.id.edt_title);
         btn_post = (Button)findViewById(R.id.btn_post);
         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("doorOpen");
