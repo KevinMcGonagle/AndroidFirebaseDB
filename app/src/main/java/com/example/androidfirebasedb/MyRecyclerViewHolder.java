@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MyRecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    TextView txt_title, txt_comment;
+    TextView txt_title, txt_comment, txt_doorOpen,txt_time;
 
 
     IItemClickListener iItemClickListener;
@@ -24,6 +24,8 @@ public class MyRecyclerViewHolder extends RecyclerView.ViewHolder implements Vie
 
         txt_comment = (TextView)itemView.findViewById(R.id.txt_content);
         txt_title = (TextView)itemView.findViewById(R.id.txt_title);
+        txt_time = (TextView)itemView.findViewById(R.id.txt_time);
+        txt_doorOpen = (TextView)itemView.findViewById(R.id.txt_doorOpen);
 
         itemView.setOnClickListener(this);
 

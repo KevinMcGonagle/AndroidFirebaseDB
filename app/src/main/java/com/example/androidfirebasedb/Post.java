@@ -1,15 +1,17 @@
 package com.example.androidfirebasedb;
 
 public class Post {
-    private String title, content;
+    private String title, content, time, doorOpen;
 
     public Post(){
 
     }
 
-    public Post(String title, String content){
+    public Post(String title, String content,String doorOpen,String time){
         this.title = title;
         this.content = content;
+        this.doorOpen = doorOpen;
+        this.time = time;
     }
 
     public String getTitle(){
@@ -27,4 +29,21 @@ public class Post {
     public void setContent(String content){
         this.content = content;
     }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getDoorOpen() {
+        return doorOpen;
+    }
+
+    public void setDoorOpen(String doorOpen) {
+        this.doorOpen = doorOpen;
+    }
 }
+

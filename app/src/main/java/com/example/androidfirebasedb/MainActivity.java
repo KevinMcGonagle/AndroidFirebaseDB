@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText edt_title,edt_content;
+    EditText edt_title,edt_content,edt_doorOpen,edt_time;
     Button btn_post, btn_update, btn_delete;
     RecyclerView recyclerView;
 
@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
         edt_content = (EditText)findViewById(R.id.edt_content);
         edt_title = (EditText)findViewById(R.id.edt_title);
+        edt_doorOpen = (EditText)findViewById(R.id.edt_doorOpen);
+        edt_time = (EditText)findViewById(R.id.edt_time);
         btn_post = (Button)findViewById(R.id.btn_post);
         btn_update = (Button)findViewById(R.id.btn_update);
         btn_delete = (Button)findViewById(R.id.btn_delete);
@@ -80,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 databaseReference
                         .child(selectedKey)
-                        .setValue(new Post(edt_title.getText().toString(),edt_content.getText().toString()))
+                        .setValue(new Post(edt_title.getText().toString(),edt_content.getText().toString(),edt_doorOpen.getText().toString(),edt_time.getText().toString()))
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -131,8 +133,10 @@ public class MainActivity extends AppCompatActivity {
     private void postComment() {
         String title = edt_title.getText().toString();
         String content = edt_content.getText().toString();
+        String doorOpen = edt_doorOpen.getText().toString();
+        String time = edt_time.getText().toString();
 
-        Post post = new Post(title,content);
+        Post post = new Post(title,content,doorOpen,time);
 
         databaseReference.push() //use this method to create unique id of comment
                  .setValue(post);
@@ -155,6 +159,8 @@ public class MainActivity extends AppCompatActivity {
                     protected void onBindViewHolder(@NonNull MyRecyclerViewHolder holder, final int position, @NonNull final Post model) {
                         holder.txt_title.setText(model.getTitle());
                         holder.txt_comment.setText(model.getContent());
+                        holder.txt_time.setText(model.getTime());
+                        holder.txt_doorOpen.setText(model.getDoorOpen());
 
 
                         holder.setiItemClickListener(new IItemClickListener() {
@@ -167,6 +173,8 @@ public class MainActivity extends AppCompatActivity {
                                 //bind data
                                 edt_content.setText(model.getContent());
                                 edt_title.setText(model.getTitle());
+                                edt_time.setText(model.getTime());
+                                edt_doorOpen.setText(model.getDoorOpen());
                             }
                         });
                     }
