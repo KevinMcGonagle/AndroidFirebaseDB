@@ -10,7 +10,7 @@
         android:id="@+id/txt_name"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:text="Title"
+        android:text="Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -19,7 +19,7 @@
         android:textSize="20sp"
         android:textStyle="italic"
         android:layout_below="@id/txt_name"
-        android:text="Content"
+        android:text="Colour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
@@ -27,7 +27,7 @@
         android:textSize="20sp"
         android:textStyle="italic"
         android:layout_below="@id/txt_colour"
-        android:text="Content"
+        android:text="Shape"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
@@ -35,7 +35,7 @@
         android:textSize="20sp"
         android:textStyle="italic"
         android:layout_below="@id/txt_shape"
-        android:text="Content"
+        android:text="Quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
@@ -43,7 +43,7 @@
         android:textSize="20sp"
         android:textStyle="italic"
         android:layout_below="@id/txt_quantity"
-        android:text="Content"
+        android:text="Time schedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

@@ -139,10 +139,10 @@ public class MainActivity extends AppCompatActivity {
         String doorOpen = edt_doorOpen.getText().toString();
         String time = edt_time.getText().toString();
         String quantity = edt_quantity.getText().toString();
-
+        String shape = edt_shape.getText().toString();
         String timeSchedule = edt_timeSchedule.getText().toString();
 
-        Post post = new Post(name,colour,doorOpen,time,timeSchedule,colour,quantity);
+        Post post = new Post(name,colour,doorOpen,time,quantity,shape,timeSchedule);
 
         databaseReference.push() //use this method to create unique id of comment
                  .setValue(post);
