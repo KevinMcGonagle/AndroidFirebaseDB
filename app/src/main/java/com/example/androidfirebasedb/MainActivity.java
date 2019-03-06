@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText edt_title,edt_content,edt_doorOpen,edt_time;
+    EditText edt_name,edt_colour,edt_doorOpen,edt_time,edt_shape, edt_quantity, edt_timeSchedule;
     Button btn_post, btn_update, btn_delete;
     RecyclerView recyclerView;
 
@@ -45,10 +45,13 @@ public class MainActivity extends AppCompatActivity {
         //FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_main);
 
-        edt_content = (EditText)findViewById(R.id.edt_content);
-        edt_title = (EditText)findViewById(R.id.edt_title);
+        edt_colour = (EditText)findViewById(R.id.edt_colour);
+        edt_name = (EditText)findViewById(R.id.edt_name);
         edt_doorOpen = (EditText)findViewById(R.id.edt_doorOpen);
         edt_time = (EditText)findViewById(R.id.edt_time);
+        edt_shape = (EditText)findViewById(R.id.edt_shape);
+        edt_quantity = (EditText)findViewById(R.id.edt_quantity);
+        edt_timeSchedule = (EditText)findViewById(R.id.edt_timeSchedule);
         btn_post = (Button)findViewById(R.id.btn_post);
         btn_update = (Button)findViewById(R.id.btn_update);
         btn_delete = (Button)findViewById(R.id.btn_delete);
@@ -82,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 databaseReference
                         .child(selectedKey)
-                        .setValue(new Post(edt_title.getText().toString(),edt_content.getText().toString(),edt_doorOpen.getText().toString(),edt_time.getText().toString()))
+                        .setValue(new Post(edt_name.getText().toString(),edt_colour.getText().toString(),edt_doorOpen.getText().toString(),edt_time.getText().toString(),edt_shape.getText().toString(),edt_quantity.getText().toString(),edt_timeSchedule.getText().toString()))
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -131,12 +134,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void postComment() {
-        String title = edt_title.getText().toString();
-        String content = edt_content.getText().toString();
+        String name = edt_name.getText().toString();
+        String colour = edt_colour.getText().toString();
         String doorOpen = edt_doorOpen.getText().toString();
         String time = edt_time.getText().toString();
+        String quantity = edt_quantity.getText().toString();
 
-        Post post = new Post(title,content,doorOpen,time);
+        String timeSchedule = edt_timeSchedule.getText().toString();
+
+        Post post = new Post(name,colour,doorOpen,time,timeSchedule,colour,quantity);
 
         databaseReference.push() //use this method to create unique id of comment
                  .setValue(post);
@@ -157,10 +163,13 @@ public class MainActivity extends AppCompatActivity {
                 new FirebaseRecyclerAdapter<Post, MyRecyclerViewHolder>(options) {
                     @Override
                     protected void onBindViewHolder(@NonNull MyRecyclerViewHolder holder, final int position, @NonNull final Post model) {
-                        holder.txt_title.setText(model.getTitle());
-                        holder.txt_comment.setText(model.getContent());
+                        holder.txt_name.setText(model.getName());
+                        holder.txt_colour.setText(model.getColour());
+                        holder.txt_shape.setText(model.getShape());
+                        holder.txt_timeSchedule.setText(model.getTimeSchedule());
                         holder.txt_time.setText(model.getTime());
                         holder.txt_doorOpen.setText(model.getDoorOpen());
+                        holder.txt_quantity.setText(model.getQuantity());
 
 
                         holder.setiItemClickListener(new IItemClickListener() {
@@ -171,8 +180,11 @@ public class MainActivity extends AppCompatActivity {
                                 Log.d("Key Item", ""+selectedKey);
 
                                 //bind data
-                                edt_content.setText(model.getContent());
-                                edt_title.setText(model.getTitle());
+                                edt_colour.setText(model.getColour());
+                                edt_name.setText(model.getName());
+                                edt_shape.setText(model.getShape());
+                                edt_quantity.setText(model.getQuantity());
+                                edt_timeSchedule.setText(model.getTimeSchedule());
                                 edt_time.setText(model.getTime());
                                 edt_doorOpen.setText(model.getDoorOpen());
                             }

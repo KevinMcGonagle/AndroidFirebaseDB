@@ -1,33 +1,36 @@
 package com.example.androidfirebasedb;
 
 public class Post {
-    private String title, content, time, doorOpen;
+    private String name, colour, time, doorOpen, quantity, shape, timeSchedule;
 
     public Post(){
 
     }
 
-    public Post(String title, String content,String doorOpen,String time){
-        this.title = title;
-        this.content = content;
+    public Post(String name, String colour,String doorOpen,String time,String quantity,String shape,String timeSchedule){
+        this.name = name;
+        this.colour = colour;
         this.doorOpen = doorOpen;
         this.time = time;
+        this.quantity = quantity;
+        this.shape = shape;
+        this.timeSchedule = timeSchedule;
     }
 
-    public String getTitle(){
-        return title;
+    public String getName(){
+        return name;
     }
 
-    public void setTitle(String title){
-        this.title = title;
+    public void setName(String title){
+        this.name = name;
     }
 
-    public String getContent(){
-        return content;
+    public String getColour() {
+        return colour;
     }
 
-    public void setContent(String content){
-        this.content = content;
+    public void setColour(String colour) {
+        this.colour = colour;
     }
 
     public String getTime() {
@@ -44,6 +47,30 @@ public class Post {
 
     public void setDoorOpen(String doorOpen) {
         this.doorOpen = doorOpen;
+    }
+
+    public String getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getShape() {
+        return shape;
+    }
+
+    public void setShape(String shape) {
+        this.shape = shape;
+    }
+
+    public String getTimeSchedule() {
+        return timeSchedule;
+    }
+
+    public void setTimeSchedule(String timeSchedule) {
+        this.timeSchedule = timeSchedule;
     }
 }
 

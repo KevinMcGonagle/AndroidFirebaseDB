@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MyRecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    TextView txt_title, txt_comment, txt_doorOpen,txt_time;
+    TextView txt_name, txt_colour, txt_doorOpen, txt_time, txt_shape, txt_quantity, txt_timeSchedule;
 
 
     IItemClickListener iItemClickListener;
@@ -22,8 +22,11 @@ public class MyRecyclerViewHolder extends RecyclerView.ViewHolder implements Vie
     public MyRecyclerViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        txt_comment = (TextView)itemView.findViewById(R.id.txt_content);
-        txt_title = (TextView)itemView.findViewById(R.id.txt_title);
+        txt_colour = (TextView)itemView.findViewById(R.id.txt_colour);
+        txt_name = (TextView)itemView.findViewById(R.id.txt_name);
+        txt_shape = (TextView)itemView.findViewById(R.id.txt_shape);
+        txt_quantity = (TextView)itemView.findViewById(R.id.txt_quantity);
+        txt_timeSchedule = (TextView)itemView.findViewById(R.id.txt_timeSchedule);
         txt_time = (TextView)itemView.findViewById(R.id.txt_time);
         txt_doorOpen = (TextView)itemView.findViewById(R.id.txt_doorOpen);
 

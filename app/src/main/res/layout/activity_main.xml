@@ -8,15 +8,33 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/edt_title"
-        android:hint="Title"
+        android:id="@+id/edt_name"
+        android:hint="Name of medication title"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/edt_content"
-        android:hint="Content"
+        android:id="@+id/edt_colour"
+        android:hint="Colour of medication content"
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/edt_shape"
+        android:hint="Shape of medication"
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/edt_quantity"
+        android:hint="How much to take"
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/edt_timeSchedule"
+        android:hint="Time to be taken at"
         android:inputType="textMultiLine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
