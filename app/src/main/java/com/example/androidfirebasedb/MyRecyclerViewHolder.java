@@ -22,13 +22,14 @@ public class MyRecyclerViewHolder extends RecyclerView.ViewHolder implements Vie
     public MyRecyclerViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        txt_colour = (TextView)itemView.findViewById(R.id.txt_colour);
         txt_name = (TextView)itemView.findViewById(R.id.txt_name);
-        txt_shape = (TextView)itemView.findViewById(R.id.txt_shape);
-        txt_quantity = (TextView)itemView.findViewById(R.id.txt_quantity);
-        txt_timeSchedule = (TextView)itemView.findViewById(R.id.txt_timeSchedule);
+        txt_colour = (TextView)itemView.findViewById(R.id.txt_colour);
         txt_time = (TextView)itemView.findViewById(R.id.txt_time);
         txt_doorOpen = (TextView)itemView.findViewById(R.id.txt_doorOpen);
+        txt_quantity = (TextView)itemView.findViewById(R.id.txt_quantity);
+        txt_shape = (TextView)itemView.findViewById(R.id.txt_shape);
+        txt_timeSchedule = (TextView)itemView.findViewById(R.id.txt_timeSchedule);
+
 
         itemView.setOnClickListener(this);
 

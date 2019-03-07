@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 databaseReference
                         .child(selectedKey)
-                        .setValue(new Post(edt_name.getText().toString(),edt_colour.getText().toString(),edt_doorOpen.getText().toString(),edt_time.getText().toString(),edt_shape.getText().toString(),edt_quantity.getText().toString(),edt_timeSchedule.getText().toString()))
+                        .setValue(new Post(edt_name.getText().toString(),edt_colour.getText().toString(),edt_doorOpen.getText().toString(),edt_time.getText().toString(),edt_quantity.getText().toString(),edt_shape.getText().toString(),edt_timeSchedule.getText().toString()))
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -146,6 +146,8 @@ public class MainActivity extends AppCompatActivity {
 
         databaseReference.push() //use this method to create unique id of comment
                  .setValue(post);
+        Toast.makeText(MainActivity.this, "Posted", Toast.LENGTH_SHORT).show();
+
 
         adapter.notifyDataSetChanged();
 

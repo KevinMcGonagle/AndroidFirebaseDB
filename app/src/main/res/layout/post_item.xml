@@ -8,8 +8,7 @@
 
     <TextView
         android:id="@+id/txt_name"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:textSize="20sp"
         android:text="Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -17,7 +16,6 @@
     <TextView
         android:id="@+id/txt_colour"
         android:textSize="20sp"
-        android:textStyle="italic"
         android:layout_below="@id/txt_name"
         android:text="Colour"
         android:layout_width="wrap_content"
@@ -25,7 +23,6 @@
     <TextView
         android:id="@+id/txt_shape"
         android:textSize="20sp"
-        android:textStyle="italic"
         android:layout_below="@id/txt_colour"
         android:text="Shape"
         android:layout_width="wrap_content"
@@ -33,7 +30,6 @@
     <TextView
         android:id="@+id/txt_quantity"
         android:textSize="20sp"
-        android:textStyle="italic"
         android:layout_below="@id/txt_shape"
         android:text="Quantity"
         android:layout_width="wrap_content"
@@ -41,7 +37,6 @@
     <TextView
         android:id="@+id/txt_timeSchedule"
         android:textSize="20sp"
-        android:textStyle="italic"
         android:layout_below="@id/txt_quantity"
         android:text="Time schedule"
         android:layout_width="wrap_content"
@@ -50,7 +45,6 @@
     <TextView
         android:id="@+id/txt_doorOpen"
         android:textSize="20sp"
-        android:textStyle="italic"
         android:layout_below="@id/txt_timeSchedule"
         android:text="doorOpen"
         android:layout_width="wrap_content"
@@ -59,7 +53,6 @@
     <TextView
         android:id="@+id/txt_time"
         android:textSize="20sp"
-        android:textStyle="italic"
         android:layout_below="@id/txt_doorOpen"
         android:text="Time"
         android:layout_width="wrap_content"
